@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>RiseFinance | Scale Fintech Safe And Secure</title>
+  <meta name="description" content="Secure fintech infrastructure, payments and analytics for growing businesses.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Google Fonts Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- Власні стилі -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ==================== ШАПКА ==================== -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="#home" class="logo-wrapper" aria-label="RiseFinance home">
+        <div class="logo-icon">
+          <i class="fa-solid fa-building-columns"></i>
+        </div>
+        <span class="logo-text">RiseFinance</span>
+      </a>
+      <nav class="desktop-nav">
+        <a href="#home" data-section="home" class="nav-link active">Products</a>
+        <a href="#solutions" data-section="solutions" class="nav-link">Solutions</a>
+        <a href="#resources" data-section="resources" class="nav-link">Resources</a>
+        <a href="#company" data-section="company" class="nav-link">Company</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Відкрити меню">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== HOME ==================== -->
+  <section id="home-section" class="page-section active-section">
+    <div class="hero-section">
+      <div class="hero-container">
+        <div class="hero-grid">
+
+          <div class="hero-left">
+            <div class="trust-badge">
+              <span class="live-dot"></span>
+              <span>Trusted by 500+ Fintech</span>
+            </div>
+            <h1 class="text-6xl lg:text-7xl font-bold leading-tight">
+              Scale Fintech<br>
+              <span class="bg-gradient-to-r from-purple-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+                Safe And Secure
+              </span>
+            </h1>
+            <p class="hero-text">
+              Ship your fintech products to your customers with fast and reliable processes.
+              Secure and highly customizable. Rise Finance is the best partner for you if you want to scale your finance products worldwide.
+            </p>
+
+            <button class="consultation-button" id="consultationBtn" type="button">
+              CONSULTATION <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <div class="company-row">
+              <div class="company-chip"><div class="chip-icon">R</div><span>logiopsum®</span></div>
+              <div class="company-chip"><div class="chip-dots"></div><span>logipsum</span></div>
+              <div class="bogo-chip">BOGO</div>
+              <div class="company-chip"><div class="chip-dots"></div><span>logipsum</span></div>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="cards-stack">
+              <div class="card-back">
+                <div class="card-back-header">
+                  <div class="card-stripes">
+                    <div class="stripe"></div>
+                    <div class="stripe"></div>
+                  </div>
+                  <div class="card-back-label">
+                    <p class="label-small">Credit Card</p>
+                    <p class="label-number">•••• 1289</p>
+                  </div>
+                </div>
+                <div class="card-back-body">
+                  <p class="label-small">Current Income</p>
+                  <p class="amount-zero">$0.00</p>
+                </div>
+                <div class="card-back-footer">
+                  <span>09/26</span>
+                  <i class="fa-solid fa-wifi"></i>
+                </div>
+              </div>
+              <div class="card-front">
+                <div class="card-front-header">
+                  <div>
+                    <p class="label-small">Current Balance</p>
+                    <p class="amount-main">$5,750.20</p>
+                  </div>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="Mastercard" class="mastercard-logo">
+                </div>
+                <div class="card-number-row">
+                  <span>5292 3456 7890 1289</span>
+                </div>
+                <div class="card-front-footer">
+                  <div><p class="label-tiny">VALID THRU</p><p class="value-bold">09/26</p></div>
+                  <div class="text-right"><p class="label-tiny">CARD HOLDER</p><p class="value-bold">ROMA MALL</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- CONSULTING -->
+    <div class="consulting-section">
+      <div class="consulting-container">
+        <h2 class="consulting-heading">Consulting For Startups In Fintech</h2>
+        <p class="consulting-subtext">
+          Our Team consists of proven experts from finance, tech and science. This mix makes
+          it possible for our team to deliver the best results to all our clients.
+        </p>
+
+        <div class="growth-card">
+          <div class="growth-card-header">
+            <div>
+              <div class="growth-label">Growth report</div>
+              <h3 class="growth-title">Annual Growth Of Our Customers</h3>
+              <div class="growth-percent">1,000% <span>in Value</span></div>
+            </div>
+            <div class="growth-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+          </div>
+          <div class="chart-area">
+            <canvas id="growthChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VALUE -->
+    <div class="value-section">
+      <div class="value-container">
+        <h2 class="value-heading">Delivering Value In Every Step Of Production</h2>
+
+        <div class="value-two-columns">
+          <div class="value-left-col">
+            <div class="meta-card">
+              <div class="meta-box">
+                <div class="meta-header">
+                  <span><i class="fa-regular fa-clock"></i> - Meta Info</span>
+                  <div class="refresh-circle" id="refreshPieBtn">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                  </div>
+                </div>
+                <h3 class="meta-body-title">This is the body title</h3>
+                <div class="meta-big-value">1,000 Value</div>
+                <p class="meta-subtitle">This is a subtitle</p>
+
+                <div class="pie-wrapper">
+                  <canvas id="pieChartCanvas"></canvas>
+                </div>
+
+                <div class="legend-row">
+                  <span><i class="legend-dot" style="background:#8b5cf6"></i> Item</span>
+                  <span><i class="legend-dot" style="background:#a78bfa"></i> Item</span>
+                  <span><i class="legend-dot" style="background:#c026d3"></i> Item</span>
+                  <span><i class="legend-dot" style="background:#6d28d9"></i> Item</span>
+                  <span><i class="legend-dot" style="background:#4f46e5"></i> Item</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="meta-card">
+              <div class="meta-box">
+                <div class="meta-header">
+                  <span><i class="fa-regular fa-clock"></i> - Meta Info</span>
+                </div>
+                <h3 class="meta-body-title">This is the body title</h3>
+                <p class="meta-subtitle">This is a subtitle</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="value-right-col">
+            <div class="process-badge-wrapper">
+              <h3 class="process-main-title">The Process</h3>
+            </div>
+            <p class="process-description">
+              Strategic phrases we run through with every client make it possible to implement highly efficient processes, even in high pace startups that like to scale as fast as possible.
+            </p>
+
+            <div class="steps-wrapper">
+              <div class="step-item">
+                <div class="step-icon-bg"><i class="fa-solid fa-chart-simple"></i></div>
+                <div class="step-number">1</div>
+                <div class="step-name">Analysis</div>
+              </div>
+              <div class="step-item">
+                <div class="step-icon-bg"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                <div class="step-number">2</div>
+                <div class="step-name">Growth Phase</div>
+              </div>
+              <div class="step-item">
+                <div class="step-icon-bg"><i class="fa-solid fa-sack-dollar"></i></div>
+                <div class="step-number">3</div>
+                <div class="step-name">Profit</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SOLUTIONS ==================== -->
+  <section id="solutions-section" class="page-section" style="display: none;">
+    <div class="section-content">
+      <h2 class="section-title">Our Solutions</h2>
+      <p class="section-subtitle">Enterprise-grade fintech solutions for modern banking, payments, and lending.</p>
+      <div class="solutions-grid">
+        <div class="solution-card">
+          <i class="fa-solid fa-globe"></i>
+          <h3>Cross-border Payments</h3>
+          <p>Fast, secure international transfers with competitive rates.</p>
+        </div>
+        <div class="solution-card">
+          <i class="fa-solid fa-shield"></i>
+          <h3>Fraud Protection</h3>
+          <p>AI-powered fraud detection and prevention systems.</p>
+        </div>
+        <div class="solution-card">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Analytics Dashboard</h3>
+          <p>Real-time insights and financial reporting tools.</p>
+        </div>
+        <div class="solution-card">
+          <i class="fa-solid fa-mobile-alt"></i>
+          <h3>Mobile SDK</h3>
+          <p>Integrate fintech capabilities into your mobile app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RESOURCES (з новинами Supabase) ==================== -->
+  <section id="resources-section" class="page-section" style="display: none;">
+    <div class="section-content">
+      <h2 class="section-title">Resources</h2>
+      <p class="section-subtitle">Documentation, guides, and API references to help you integrate.</p>
+      <div class="resources-grid">
+        <div class="resource-card">
+          <i class="fa-solid fa-book"></i>
+          <h3>Documentation</h3>
+          <p>Comprehensive API docs and integration guides.</p>
+        </div>
+        <div class="resource-card">
+          <i class="fa-solid fa-video"></i>
+          <h3>Video Tutorials</h3>
+          <p>Step-by-step video guides for developers.</p>
+        </div>
+        <div class="resource-card">
+          <i class="fa-solid fa-headset"></i>
+          <h3>Support Center</h3>
+          <p>24/7 technical support and community forum.</p>
+        </div>
+      </div>
+
+      <div class="news-heading-row">
+        <div>
+          <p class="eyebrow">INSIGHTS &amp; UPDATES</p>
+          <h3 class="news-section-title">Latest from RiseFinance</h3>
+        </div>
+        <span class="news-live-label"><span class="live-dot"></span> Updates</span>
+      </div>
+      <div class="news-grid" id="newsGrid">
+        <div class="news-loading">Loading latest updates…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COMPANY ==================== -->
+  <section id="company-section" class="page-section" style="display: none;">
+    <div class="section-content">
+      <h2 class="section-title">Company</h2>
+      <p class="section-subtitle">About us, careers, and press releases.</p>
+      <div class="company-grid">
+        <div class="company-card">
+          <i class="fa-solid fa-users"></i>
+          <h3>Our Mission</h3>
+          <p>Democratizing access to financial technology worldwide.</p>
+        </div>
+        <div class="company-card">
+          <i class="fa-solid fa-rocket"></i>
+          <h3>Join Us</h3>
+          <p>We're hiring! Check our open positions.</p>
+        </div>
+        <div class="company-card">
+          <i class="fa-solid fa-newspaper"></i>
+          <h3>Press</h3>
+          <p>Latest news and media coverage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ФУТЕР ==================== -->
+  <footer class="site-footer">
+    <div class="footer-grid-container">
+      <div class="footer-brand-col">
+        <h3 class="footer-logo-text">RiseFinance</h3>
+        <p class="footer-tagline">Scale fintech securely</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li>Web Hosting</li>
+          <li>Domains</li>
+          <li>Premium Hosting</li>
+          <li>Private Server</li>
+          <li>E-mail Hosting</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li>Pricing Plan</li>
+          <li>Documentation</li>
+          <li>Guide</li>
+          <li>Tutorial</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li>About</li>
+          <li>Blog</li>
+          <li>Join Us</li>
+          <li>Press</li>
+          <li>Partners</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li>Claim</li>
+          <li>Privacy</li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter-col">
+        <h4>Subscribe to our newsletter</h4>
+        <p class="newsletter-text">
+          Funding freemium long tail hypotheses first mover advantage assets ownership
+        </p>
+        <form class="newsletter-input-group" id="newsletterForm">
+          <input type="email" id="newsletterEmail" name="email" placeholder="Your email address" aria-label="Your email address" required maxlength="255">
+          <button id="subscribeBtn" type="submit" aria-label="Subscribe">
+            <i class="fa-regular fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <p>Design with love @ TanahAirStudio 2026. All right reserved</p>
+    </div>
+  </footer>
+
+  <!-- ==================== МОДАЛКА КОНСУЛЬТАЦІЇ ==================== -->
+  <div class="modal-backdrop" id="consultationModal" aria-hidden="true">
+    <div class="consultation-modal" role="dialog" aria-modal="true" aria-labelledby="consultationTitle">
+      <button class="modal-close" id="closeConsultation" aria-label="Close dialog">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <p class="eyebrow">LET'S TALK</p>
+      <h2 id="consultationTitle">Build your next fintech milestone.</h2>
+      <p class="modal-description">Tell us a little about your project. Our team will get back to you.</p>
+      <form id="consultationForm" class="consultation-form">
+        <label>Your name
+          <input type="text" name="name" placeholder="Alex Morgan" maxlength="100" required>
+        </label>
+        <label>Work email
+          <input type="email" name="email" placeholder="you@company.com" maxlength="255" required>
+        </label>
+        <label>How can we help?
+          <textarea name="message" placeholder="Tell us about your goals…" rows="4" maxlength="4000" required></textarea>
+        </label>
+        <button class="consultation-button modal-submit" type="submit">
+          SEND REQUEST <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toastNotification" class="toast-notification hidden">
+    <span>OK</span>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileNavOverlay" class="mobile-nav-overlay"></div>
+  <nav id="mobileNav" class="mobile-nav">
+    <button id="closeMobileNav" class="close-mobile-btn" aria-label="Закрити">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <a href="#home" class="mobile-nav-link active" data-section="home">Products</a>
+    <a href="#solutions" class="mobile-nav-link" data-section="solutions">Solutions</a>
+    <a href="#resources" class="mobile-nav-link" data-section="resources">Resources</a>
+    <a href="#company" class="mobile-nav-link" data-section="company">Company</a>
+  </nav>
+
+  <!-- ГОЛОВНИЙ СКРИПТ -->
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
