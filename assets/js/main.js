@@ -212,10 +212,10 @@ import {
       new Chart(growth, {
         type: 'line',
         data: {
-          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+          labels: ['Січ', 'Лют', 'Бер', 'Кві', 'Тра', 'Чер', 'Лип', 'Сер'],
           datasets: [
             {
-              label: 'Growth',
+              label: 'Зростання',
               data: [18, 24, 22, 39, 34, 56, 63, 82],
               borderColor: '#a78bfa',
               backgroundColor: 'rgba(167,139,250,.12)',
@@ -251,7 +251,7 @@ import {
       new Chart(pie, {
         type: 'doughnut',
         data: {
-          labels: ['Payments', 'Analytics', 'Security', 'Other'],
+          labels: ['Платежі', 'Аналітика', 'Безпека', 'Інше'],
           datasets: [
             {
               data: [34, 25, 23, 18],
