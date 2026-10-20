@@ -26,8 +26,4 @@
 - Supabase Auth для адміна
 - UNIQUE-обмеження на email підписників
 
-## Aдміністратор + BD
-Email: admin@risefinance.local
-Password: admin1234567890
 
-risefinance123@ - до БД
