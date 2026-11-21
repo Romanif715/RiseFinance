@@ -150,56 +150,70 @@
       </div>
     </div>
 
- <!-- VALUE СЕКЦІЯ -->
-<section class="value-section" aria-labelledby="value-heading">
-  <div class="value-container">
-    <h2 class="value-heading" id="value-heading">
-      Створення цінності на кожному етапі виробництва
-    </h2>
+     <!-- VALUE СЕКЦІЯ -->
+    <div class="value-section">
+      <div class="value-container">
+        <h2 class="value-heading">Створюємо цінність на кожному етапі виробництва</h2>
 
-    <div class="value-two-columns">
-      <!-- ЛІВА КОЛОНКА -->
-      <div class="value-left-col">
-        <article class="meta-card" aria-labelledby="meta-title-1">
-          <div class="meta-box">
-            <header class="meta-header">
-              <span class="meta-header-label">
-                <i class="fa-regular fa-clock" aria-hidden="true"></i>
-                Мета-інформація
-              </span>
-              <button
-                type="button"
-                class="refresh-circle"
-                id="refreshPieBtn"
-                aria-label="Оновити дані діаграми"
-                title="Оновити"
-              >
-                <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
-              </button>
-            </header>
+        <div class="value-two-columns">
+          <div class="value-left-col">
+            <div class="meta-card">
+              <div class="meta-box">
+                <div class="meta-header">
+                  <span><i class="fa-regular fa-clock"></i> - Мета-інфо</span>
+                  <div class="refresh-circle" id="refreshPieBtn">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                  </div>
+                </div>
+                <h3 class="meta-body-title">Це заголовок тіла</h3>
+                <div class="meta-big-value">1,000 Значення</div>
+                <p class="meta-subtitle">Це підзаголовок</p>
 
-            <h3 class="meta-body-title" id="meta-title-1">Це основний заголовок</h3>
-            <p class="meta-big-value">1 000 <span>Цінність</span></p>
-            <p class="meta-subtitle">Це підзаголовок</p>
+                <div class="pie-wrapper">
+                  <canvas id="pieChartCanvas"></canvas>
+                </div>
 
-            <div class="pie-wrapper">
-              <canvas
-                id="pieChartCanvas"
-                role="img"
-                aria-label="Кругова діаграма розподілу цінності за елементами"
-              ></canvas>
+                <div class="legend-row">
+                  <span><i class="legend-dot" style="background:#8b5cf6"></i> Елемент</span>
+                  <span><i class="legend-dot" style="background:#a78bfa"></i> Елемент</span>
+                  <span><i class="legend-dot" style="background:#c026d3"></i> Елемент</span>
+                  <span><i class="legend-dot" style="background:#6d28d9"></i> Елемент</span>
+                  <span><i class="legend-dot" style="background:#4f46e5"></i> Елемент</span>
+                </div>
+              </div>
             </div>
 
-            <ul class="legend-row" aria-label="Легенда діаграми">
-              <li><span class="legend-dot" style="background:#8b5cf6" aria-hidden="true"></span> Елемент</li>
-              <li><span class="legend-dot" style="background:#a78bfa" aria-hidden="true"></span> Елемент</li>
-              <li><span class="legend-dot" style="background:#c026d3" aria-hidden="true"></span> Елемент</li>
-              <li><span class="legend-dot" style="background:#6d28d9" aria-hidden="true"></span> Елемент</li>
-              <li><span class="legend-dot" style="background:#4f46e5" aria-hidden="true"></span> Елемент</li>
-            </ul>
-          </div>
-        </article>
+            
+          <div class="value-right-col">
+            <div class="process-badge-wrapper">
+              <h3 class="process-main-title">Процес</h3>
+            </div>
+            <p class="process-description">
+              Стратегічні етапи, які ми проходимо з кожним клієнтом, дозволяють впроваджувати високоефективні процеси навіть у швидкозростаючих стартапах, які прагнуть масштабуватися якомога швидше.
+            </p>
 
+            <div class="steps-wrapper">
+              <div class="step-item">
+                <div class="step-icon-bg"><i class="fa-solid fa-chart-simple"></i></div>
+                <div class="step-number">1</div>
+                <div class="step-name">Аналіз</div>
+              </div>
+              <div class="step-item">
+                <div class="step-icon-bg"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                <div class="step-number">2</div>
+                <div class="step-name">Фаза зростання</div>
+              </div>
+              <div class="step-item">
+                <div class="step-icon-bg"><i class="fa-solid fa-sack-dollar"></i></div>
+                <div class="step-number">3</div>
+                <div class="step-name">Прибуток</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
       <!-- ПРАВА КОЛОНКА -->
       <div class="value-right-col">
