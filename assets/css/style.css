@@ -1,49 +1,28 @@
-/* ============================================================
-   ШРИФТИ
-   ============================================================ */
+/* ===== ШРИФТИ ===== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-/* ============================================================
-   CSS-ЗМІННІ
-   ============================================================ */
+/* ===== CSS-ЗМІННІ ===== */
 :root {
-  /* Кольори */
   --bg: #080711;
   --surface: #11101d;
-  --surface-2: #171527;
   --text: #f8f7ff;
   --muted: #a4a0ba;
   --purple: #8b5cf6;
   --purple-2: #c084fc;
   --purple-light: #c4b5fd;
   --purple-soft: #a78bfa;
-  --purple-border: #a78bfa35;
   --line: rgba(255, 255, 255, .09);
-
-  /* Градієнти */
   --grad-purple: linear-gradient(105deg, #8b5cf6, #6d28d9);
   --grad-card: linear-gradient(145deg, #171527, #0f0e19);
-  --grad-meta: linear-gradient(145deg, #1a172b, #100f1b);
-  --grad-icon: linear-gradient(145deg, #8b5cf630, #8b5cf608);
-  --grad-modal: linear-gradient(145deg, #191629, #0e0d18);
   --grad-title: linear-gradient(90deg, #c4b5fd, #a78bfa, #e879f9);
-
-  /* Розміри */
   --radius: 22px;
   --max: 1200px;
 }
 
-/* ============================================================
-   СКИДАННЯ ТА БАЗОВІ СТИЛІ
-   ============================================================ */
-* {
-  box-sizing: border-box;
-}
+/* ===== СКИДАННЯ ТА БАЗОВІ СТИЛІ ===== */
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -53,7 +32,6 @@ body {
   line-height: 1.6;
 }
 
-/* Фонове світіння */
 body:before {
   content: "";
   position: fixed;
@@ -65,79 +43,11 @@ body:before {
     radial-gradient(ellipse at 4% 42%, rgba(69, 42, 130, .1), transparent 35%);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
 
-button,
-input,
-textarea {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-/* ============================================================
-   СПІЛЬНІ УТИЛІТАРНІ ПАТЕРНИ
-   ============================================================ */
-/* Флекс-рядок із розподілом по краях (header-и карток) */
-.card-header-row,
-.card-back-header,
-.card-front-header,
-.growth-card-header,
-.meta-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Групові картки (рішення / ресурси / компанія) */
-.solution-card,
-.resource-card,
-.company-card {
-  padding: 28px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: var(--grad-card);
-  transition: transform .2s, border-color .2s;
-}
-
-.solution-card:hover,
-.resource-card:hover,
-.company-card:hover {
-  transform: translateY(-4px);
-  border-color: #9b79f566;
-}
-
-:is(.solution-card, .resource-card, .company-card) > i {
-  width: 46px;
-  height: 46px;
-  display: grid;
-  place-items: center;
-  border-radius: 14px;
-  background: #8b5cf61b;
-  color: var(--purple-light);
-  font-size: 19px;
-}
-
-:is(.solution-card, .resource-card, .company-card) h3 {
-  font-size: 17px;
-  margin: 22px 0 8px;
-}
-
-:is(.solution-card, .resource-card, .company-card) p {
-  font-size: 13px;
-  line-height: 1.8;
-  color: var(--muted);
-  margin: 0;
-}
-
-/* ============================================================
-   ШАПКА САЙТУ
-   ============================================================ */
+/* ===== ШАПКА ===== */
 .main-header {
   position: sticky;
   top: 0;
@@ -193,9 +103,7 @@ button {
 }
 
 .nav-link:hover,
-.nav-link.active {
-  color: #fff;
-}
+.nav-link.active { color: #fff; }
 
 .nav-link.active:after {
   content: "";
@@ -214,34 +122,8 @@ button {
   font-size: 22px;
 }
 
-/* ============================================================
-   СЕКЦІЇ ТА АНІМАЦІЯ
-   ============================================================ */
-.page-section {
-  animation: fadeIn .35s ease;
-}
-
-.page-section[style*="display: none"] {
-  display: none !important;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: .3;
-    transform: translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* ============================================================
-   КОНТЕЙНЕРИ МАКЕТУ
-   ============================================================ */
+/* ===== КОНТЕЙНЕРИ ===== */
 .hero-container,
-.consulting-container,
-.value-container,
 .section-content {
   max-width: var(--max);
   margin: auto;
@@ -249,19 +131,14 @@ button {
   padding-right: 28px;
 }
 
-.hero-section {
-  position: relative;
-  overflow: hidden;
-}
+.hero-section { position: relative; overflow: hidden; }
 
 .hero-container {
   padding-top: 84px;
   padding-bottom: 92px;
 }
 
-/* ============================================================
-   ГОЛОВНИЙ БЛОК (HERO)
-   ============================================================ */
+/* ===== HERO ===== */
 .hero-grid {
   display: grid;
   grid-template-columns: 1.05fr .95fr;
@@ -269,8 +146,7 @@ button {
   align-items: center;
 }
 
-.trust-badge,
-.news-live-label {
+.trust-badge {
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -281,7 +157,6 @@ button {
   border-radius: 99px;
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: .3px;
 }
 
 .live-dot {
@@ -346,36 +221,7 @@ button {
   font-weight: 700;
 }
 
-.company-chip {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.chip-icon {
-  display: grid;
-  place-items: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 7px;
-  background: #262238;
-  color: var(--purple-light);
-}
-
-.chip-dots {
-  width: 20px;
-  height: 20px;
-  border: 4px dotted #8a849e;
-  border-radius: 50%;
-}
-
-.bogo-chip {
-  font-size: 15px;
-  letter-spacing: 2px;
-  color: #9b94ad;
-}
-
-/* ---- Стопка карток ---- */
+/* Стопка карток */
 .hero-right {
   min-height: 440px;
   display: grid;
@@ -437,53 +283,6 @@ button {
   border-radius: 50%;
   right: -80px;
   top: -100px;
-  box-shadow: 0 0 0 20px #ffffff08, 0 0 0 40px #ffffff05;
-}
-
-.card-stripes {
-  display: flex;
-  gap: 5px;
-}
-
-.stripe {
-  height: 26px;
-  width: 8px;
-  border-radius: 5px;
-  background: #b7a2ff;
-}
-
-.stripe:nth-child(2) {
-  opacity: .4;
-}
-
-.label-small {
-  font-size: 10px;
-  color: #e3d9ffad;
-  margin: 0 0 6px;
-}
-
-.label-number {
-  font-size: 13px;
-  letter-spacing: 2px;
-  margin: 0;
-}
-
-.card-back-body {
-  margin-top: 28px;
-}
-
-.amount-zero {
-  font-size: 25px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.card-back-footer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 17px;
-  color: #ded4ff;
-  font-size: 11px;
 }
 
 .amount-main {
@@ -491,13 +290,6 @@ button {
   font-weight: 800;
   letter-spacing: -1px;
   margin: 0;
-}
-
-.mastercard-logo {
-  width: 48px;
-  height: auto;
-  filter: brightness(0) invert(1);
-  opacity: .9;
 }
 
 .card-number-row {
@@ -512,255 +304,10 @@ button {
   margin-top: 20px;
 }
 
-.label-tiny {
-  font-size: 8px;
-  letter-spacing: 1px;
-  margin: 0;
-  color: #e3d9ffb5;
-}
-
-.value-bold {
-  font-size: 10px;
-  font-weight: 700;
-  margin: 3px 0;
-}
-
-.text-right {
-  text-align: right;
-}
-
-/* ============================================================
-   СЕКЦІЯ КОНСАЛТИНГУ
-   ============================================================ */
-.consulting-section,
-.value-section {
-  padding: 82px 0;
-  border-top: 1px solid var(--line);
-}
-
-.consulting-heading,
-.value-heading {
-  font-size: clamp(28px, 3.5vw, 42px);
-  letter-spacing: -1.7px;
-  line-height: 1.2;
-  text-align: center;
-  margin: 0 auto 15px;
-  max-width: 720px;
-}
-
-.consulting-subtext {
-  color: var(--muted);
-  text-align: center;
-  max-width: 650px;
-  margin: 0 auto 40px;
-  font-size: 14px;
-  line-height: 1.9;
-}
-
-.growth-card {
-  max-width: 780px;
-  margin: auto;
-  padding: 30px 34px;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  background: var(--grad-card);
-  box-shadow: 0 25px 70px #0002;
-}
-
-.growth-label,
-.eyebrow {
-  font-size: 10px;
-  color: #b8a2ff;
-  letter-spacing: 1.6px;
-  font-weight: 800;
-}
-
-.growth-title {
-  font-size: 18px;
-  margin: 6px 0;
-}
-
-.growth-percent {
-  font-size: 29px;
-  font-weight: 800;
-  color: var(--purple-light);
-}
-
-.growth-percent span {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--muted);
-}
-
-.growth-icon {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  background: #8b5cf620;
-  border: 1px solid var(--purple-border);
-  border-radius: 15px;
-  color: var(--purple-light);
-  font-size: 20px;
-}
-
-.chart-area {
-  height: 220px;
-  margin-top: 22px;
-}
-
-/* ============================================================
-   СЕКЦІЯ ЦІННОСТЕЙ
-   ============================================================ */
-.value-heading {
-  margin-bottom: 48px;
-}
-
-.value-two-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 54px;
-  align-items: center;
-}
-
-.value-left-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.meta-card {
-  padding: 10px;
-  background: var(--grad-meta);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  min-width: 0;
-}
-
-.meta-box {
-  padding: 14px;
-}
-
-.meta-header {
-  color: #a9a3c1;
-  font-size: 10px;
-}
-
-.refresh-circle {
-  width: 27px;
-  height: 27px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: #8b5cf61a;
-  color: var(--purple-light);
-  cursor: pointer;
-}
-
-.meta-body-title {
-  font-size: 13px;
-  margin: 22px 0 5px;
-}
-
-.meta-big-value {
-  font-size: 22px;
-  font-weight: 800;
-}
-
-.meta-subtitle {
-  font-size: 10px;
-  color: var(--muted);
-  margin: 3px 0;
-}
-
-.pie-wrapper {
-  height: 130px;
-  margin: 15px auto 6px;
-  max-width: 160px;
-}
-
-.legend-row {
-  display: flex;
-  gap: 7px;
-  justify-content: center;
-  flex-wrap: wrap;
-  font-size: 8px;
-  color: #a9a3c1;
-}
-
-.legend-dot {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-}
-
-/* ---- Кроки процесу ---- */
-.process-main-title {
-  font-size: 30px;
-  letter-spacing: -1px;
-  margin: 0 0 12px;
-}
-
-.process-description {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.9;
-}
-
-.steps-wrapper {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  margin-top: 30px;
-}
-
-.step-item {
-  position: relative;
-  flex: 1;
-  text-align: center;
-}
-
-.step-icon-bg {
-  width: 58px;
-  height: 58px;
-  margin: auto auto 10px;
-  display: grid;
-  place-items: center;
-  border-radius: 18px;
-  background: var(--grad-icon);
-  border: 1px solid #a78bfa30;
-  color: var(--purple-light);
-  font-size: 19px;
-}
-
-.step-number {
-  position: absolute;
-  top: -7px;
-  left: calc(50% + 13px);
-  width: 20px;
-  height: 20px;
-  display: grid;
-  place-items: center;
-  background: var(--purple-soft);
-  color: #171027;
-  border-radius: 50%;
-  font-size: 10px;
-  font-weight: 800;
-}
-
-.step-name {
-  font-size: 11px;
-  font-weight: 700;
-}
-
-/* ============================================================
-   ЗАГАЛЬНИЙ ВМІСТ СЕКЦІЙ
-   ============================================================ */
+/* ===== СЕКЦІЇ ===== */
 .section-content {
   padding-top: 90px;
   padding-bottom: 100px;
-  min-height: 60vh;
 }
 
 .section-title {
@@ -777,557 +324,80 @@ button {
   line-height: 1.8;
 }
 
-/* ============================================================
-   СІТКИ
-   ============================================================ */
+/* Картки */
+.solution-card,
+.resource-card,
+.company-card {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--grad-card);
+  transition: transform .2s, border-color .2s;
+}
+
+.solution-card:hover,
+.resource-card:hover,
+.company-card:hover {
+  transform: translateY(-4px);
+  border-color: #9b79f566;
+}
+
 .solutions-grid,
 .resources-grid,
-.company-grid,
-.news-grid {
+.company-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
-/* ============================================================
-   НОВИНИ
-   ============================================================ */
-.news-heading-row {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  margin: 70px 0 24px;
-}
-
-.news-section-title {
-  font-size: 27px;
-  letter-spacing: -.8px;
-  margin: 5px 0 0;
-}
-
-.news-card {
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 19px;
-  background: var(--surface);
-}
-
-.news-image {
-  display: block;
-  width: 100%;
-  height: 175px;
-  object-fit: cover;
-  background: #201a35;
-}
-
-.news-copy {
-  padding: 22px;
-}
-
-.news-date {
-  font-size: 10px;
-  color: #b5a4ee;
-  letter-spacing: .6px;
-}
-
-.news-copy h3 {
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 10px 0;
-}
-
-.news-copy p {
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.8;
-  margin: 0;
-}
-
-.news-loading {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-/* ============================================================
-   ПІДВАЛ САЙТУ
-   ============================================================ */
+/* ===== ПІДВАЛ ===== */
 .site-footer {
   border-top: 1px solid var(--line);
   background: #090812;
-  padding: 55px 28px 0;
-}
-
-.footer-grid-container {
-  max-width: var(--max);
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1.2fr repeat(3, .7fr) 1.2fr;
-  gap: 28px;
-}
-
-.footer-logo-text {
-  font-size: 20px;
-  margin: 0;
-}
-
-.footer-tagline,
-.newsletter-text {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.footer-col h4,
-.footer-newsletter-col h4 {
-  font-size: 12px;
-  margin: 0 0 18px;
-}
-
-.footer-col ul {
-  padding: 0;
-  list-style: none;
-  margin: 0;
-}
-
-.footer-col li {
-  font-size: 11px;
-  color: var(--muted);
-  margin: 10px 0;
-}
-
-.newsletter-input-group {
-  display: flex;
-  gap: 6px;
-  margin-top: 17px;
-}
-
-.newsletter-input-group input {
-  width: 100%;
-  min-width: 0;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  padding: 12px;
-  background: #141220;
-  color: #fff;
-  font-size: 11px;
-  outline: none;
-}
-
-.newsletter-input-group input:focus {
-  border-color: var(--purple-soft);
-}
-
-.newsletter-input-group button {
-  width: 43px;
-  flex-shrink: 0;
-  border: 0;
-  border-radius: 9px;
-  background: var(--purple);
-  color: white;
-}
-
-.footer-copyright {
-  max-width: var(--max);
-  margin: 45px auto 0;
-  padding: 20px 0;
-  border-top: 1px solid var(--line);
+  padding: 55px 28px 20px;
   text-align: center;
   color: #716d83;
-  font-size: 10px;
+  font-size: 12px;
 }
 
-/* ============================================================
-   СПОВІЩЕННЯ (TOAST)
-   ============================================================ */
-.toast-notification {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 100;
-  background: #211a36;
-  border: 1px solid #9b79f566;
-  padding: 14px 19px;
-  border-radius: 12px;
-  color: #f7f1ff;
-  font-size: 13px;
-  box-shadow: 0 15px 40px #0007;
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-  transition: .25s;
-}
-
-.toast-notification.show {
-  opacity: 1;
-  transform: none;
-}
-
-/* ============================================================
-   УТИЛІТИ
-   ============================================================ */
-.hidden {
-  display: none !important;
-}
-
-/* ============================================================
-   МОДАЛЬНЕ ВІКНО
-   ============================================================ */
-.modal-backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  display: none;
-  place-items: center;
-  padding: 20px;
-  background: #05040bd9;
-  backdrop-filter: blur(10px);
-}
-
-.modal-backdrop.open {
-  display: grid;
-}
-
-.consultation-modal {
-  position: relative;
-  width: min(100%, 520px);
-  max-height: 90vh;
-  overflow: auto;
-  padding: 35px;
-  border: 1px solid var(--purple-border);
-  border-radius: 24px;
-  background: var(--grad-modal);
-  box-shadow: 0 35px 100px #0009;
-}
-
-.modal-close {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  border: 0;
-  background: #ffffff0d;
-  color: #fff;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-}
-
-.consultation-modal h2 {
-  font-size: 30px;
-  line-height: 1.2;
-  letter-spacing: -1px;
-  margin: 8px 30px 10px 0;
-}
-
-.modal-description {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 25px;
-}
-
-.consultation-form {
-  display: grid;
-  gap: 15px;
-}
-
-.consultation-form label {
-  font-size: 11px;
-  font-weight: 700;
-  color: #ded9ef;
-  display: grid;
-  gap: 7px;
-}
-
-.consultation-form input,
-.consultation-form textarea {
-  width: 100%;
-  resize: vertical;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 12px 13px;
-  background: #0c0b15;
-  color: #fff;
-  outline: none;
-  font-size: 13px;
-}
-
-.consultation-form input:focus,
-.consultation-form textarea:focus {
-  border-color: var(--purple-soft);
-}
-
-.modal-submit {
-  width: 100%;
-  justify-content: space-between;
-  margin-top: 4px;
-}
-
-/* ============================================================
-   МОБІЛЬНЕ МЕНЮ
-   ============================================================ */
-.mobile-nav-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  background: #0009;
-  display: none;
-}
-
-.mobile-nav {
-  position: fixed;
-  right: -300px;
-  top: 0;
-  bottom: 0;
-  width: min(280px, 85vw);
-  z-index: 61;
-  background: var(--surface);
-  border-left: 1px solid var(--line);
-  padding: 80px 28px 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  transition: right .25s;
-}
-
-.mobile-nav.open {
-  right: 0;
-}
-
-.mobile-nav-overlay.open {
-  display: block;
-}
-
-.mobile-nav-link {
-  color: #b8b2ce;
-  font-weight: 600;
-}
-
-.mobile-nav-link.active {
-  color: #fff;
-}
-
-.close-mobile-btn {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  background: none;
-  color: #fff;
-  border: 0;
-  font-size: 22px;
-}
-
-/* ============================================================
-   АДАПТИВНІСТЬ — max-width: 900px
-   ============================================================ */
+/* ===== АДАПТИВНІСТЬ ===== */
 @media (max-width: 900px) {
-  .hero-grid {
-    gap: 20px;
-  }
-
-  .hero-left h1 {
-    letter-spacing: -2.5px;
-  }
-
-  .hero-right {
-    min-height: 380px;
-  }
-
-  .cards-stack {
-    transform: scale(.88);
-  }
-
-  .value-two-columns {
-    gap: 30px;
-  }
-
-  .value-left-col {
-    grid-template-columns: 1fr;
-  }
-
-  .meta-card:nth-child(2) {
-    display: none;
-  }
-
-  .footer-grid-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .footer-brand-col,
-  .footer-newsletter-col {
-    grid-column: span 3;
-  }
-
+  .hero-grid { gap: 20px; }
+  .hero-right { min-height: 380px; }
+  .cards-stack { transform: scale(.88); }
   .solutions-grid,
   .resources-grid,
-  .company-grid,
-  .news-grid {
+  .company-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-/* ============================================================
-   АДАПТИВНІСТЬ — max-width: 640px
-   ============================================================ */
 @media (max-width: 640px) {
   .header-container {
     height: 70px;
     padding: 0 20px;
   }
+  .desktop-nav { display: none; }
+  .mobile-menu-btn { display: block; }
 
-  .desktop-nav {
-    display: none;
-  }
-
-  .mobile-menu-btn {
-    display: block;
-  }
-
-  .hero-container {
-    padding: 55px 20px 65px;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
+  .hero-container { padding: 55px 20px 65px; }
+  .hero-grid { grid-template-columns: 1fr; }
   .hero-left h1 {
     font-size: 48px;
     letter-spacing: -2.5px;
   }
-
-  .hero-text {
-    font-size: 13px;
-  }
-
-  .company-row {
-    gap: 13px;
-    margin-top: 30px;
-  }
-
-  .hero-right {
-    min-height: 310px;
-    margin-top: 4px;
-  }
-
+  .hero-right { min-height: 310px; }
   .cards-stack {
     transform: scale(.78);
     transform-origin: center top;
   }
 
-  .consulting-section,
-  .value-section {
-    padding: 60px 0;
-  }
-
-  .hero-container,
-  .consulting-container,
-  .value-container,
   .section-content {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 60px 20px 70px;
   }
-
-  .growth-card {
-    padding: 23px 18px;
-  }
-
-  .growth-title {
-    font-size: 15px;
-  }
-
-  .chart-area {
-    height: 190px;
-  }
-
-  .value-two-columns,
-  .value-left-col {
-    grid-template-columns: 1fr;
-  }
-
-  .meta-card:nth-child(2) {
-    display: block;
-  }
-
-  .value-heading {
-    margin-bottom: 30px;
-  }
-
-  .process-main-title {
-    font-size: 26px;
-  }
-
-  .steps-wrapper {
-    gap: 8px;
-  }
-
-  .step-icon-bg {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-  }
-
-  .step-name {
-    font-size: 10px;
-  }
-
-  .section-content {
-    padding-top: 60px;
-    padding-bottom: 70px;
-  }
-
-  .section-title {
-    font-size: 38px;
-  }
-
   .solutions-grid,
   .resources-grid,
-  .company-grid,
-  .news-grid {
+  .company-grid {
     grid-template-columns: 1fr;
-  }
-
-  .solution-card,
-  .resource-card,
-  .company-card {
-    padding: 24px;
-  }
-
-  .news-heading-row {
-    margin-top: 50px;
-    align-items: start;
-    gap: 12px;
-    flex-direction: column;
-  }
-
-  .news-image {
-    height: 200px;
-  }
-
-  .site-footer {
-    padding: 40px 20px 0;
-  }
-
-  .footer-grid-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px 18px;
-  }
-
-  .footer-brand-col,
-  .footer-newsletter-col {
-    grid-column: span 2;
-  }
-
-  .consultation-modal {
-    padding: 28px 22px;
-  }
-
-  .consultation-modal h2 {
-    font-size: 26px;
-  }
-
-  .toast-notification {
-    left: 16px;
-    right: 16px;
-    bottom: 16px;
-    text-align: center;
   }
 }
