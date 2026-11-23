@@ -7,6 +7,7 @@
    CSS-ЗМІННІ
    ============================================================ */
 :root {
+  /* Кольори */
   --bg: #080711;
   --surface: #11101d;
   --surface-2: #171527;
@@ -14,7 +15,20 @@
   --muted: #a4a0ba;
   --purple: #8b5cf6;
   --purple-2: #c084fc;
+  --purple-light: #c4b5fd;
+  --purple-soft: #a78bfa;
+  --purple-border: #a78bfa35;
   --line: rgba(255, 255, 255, .09);
+
+  /* Градієнти */
+  --grad-purple: linear-gradient(105deg, #8b5cf6, #6d28d9);
+  --grad-card: linear-gradient(145deg, #171527, #0f0e19);
+  --grad-meta: linear-gradient(145deg, #1a172b, #100f1b);
+  --grad-icon: linear-gradient(145deg, #8b5cf630, #8b5cf608);
+  --grad-modal: linear-gradient(145deg, #191629, #0e0d18);
+  --grad-title: linear-gradient(90deg, #c4b5fd, #a78bfa, #e879f9);
+
+  /* Розміри */
   --radius: 22px;
   --max: 1200px;
 }
@@ -39,7 +53,7 @@ body {
   line-height: 1.6;
 }
 
-/* Фонове світіння (декоративні градієнти) */
+/* Фонове світіння */
 body:before {
   content: "";
   position: fixed;
@@ -64,6 +78,61 @@ textarea {
 
 button {
   cursor: pointer;
+}
+
+/* ============================================================
+   СПІЛЬНІ УТИЛІТАРНІ ПАТЕРНИ
+   ============================================================ */
+/* Флекс-рядок із розподілом по краях (header-и карток) */
+.card-header-row,
+.card-back-header,
+.card-front-header,
+.growth-card-header,
+.meta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Групові картки (рішення / ресурси / компанія) */
+.solution-card,
+.resource-card,
+.company-card {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--grad-card);
+  transition: transform .2s, border-color .2s;
+}
+
+.solution-card:hover,
+.resource-card:hover,
+.company-card:hover {
+  transform: translateY(-4px);
+  border-color: #9b79f566;
+}
+
+:is(.solution-card, .resource-card, .company-card) > i {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #8b5cf61b;
+  color: var(--purple-light);
+  font-size: 19px;
+}
+
+:is(.solution-card, .resource-card, .company-card) h3 {
+  font-size: 17px;
+  margin: 22px 0 8px;
+}
+
+:is(.solution-card, .resource-card, .company-card) p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 0;
 }
 
 /* ============================================================
@@ -128,7 +197,6 @@ button {
   color: #fff;
 }
 
-/* Підкреслення активного пункту меню */
 .nav-link.active:after {
   content: "";
   display: block;
@@ -147,7 +215,7 @@ button {
 }
 
 /* ============================================================
-   СЕКЦІЇ СТОРІНКИ ТА АНІМАЦІЯ
+   СЕКЦІЇ ТА АНІМАЦІЯ
    ============================================================ */
 .page-section {
   animation: fadeIn .35s ease;
@@ -157,7 +225,6 @@ button {
   display: none !important;
 }
 
-/* Плавна поява секції */
 @keyframes fadeIn {
   from {
     opacity: .3;
@@ -202,7 +269,6 @@ button {
   align-items: center;
 }
 
-/* Бейдж довіри / позначка "у прямому ефірі" */
 .trust-badge,
 .news-live-label {
   display: inline-flex;
@@ -222,7 +288,7 @@ button {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #a78bfa;
+  background: var(--purple-soft);
   box-shadow: 0 0 0 4px #a78bfa20;
 }
 
@@ -233,9 +299,8 @@ button {
   margin: 25px 0 23px;
 }
 
-/* Градієнтний текст у заголовку */
 .hero-left h1 span {
-  background: linear-gradient(90deg, #c4b5fd, #a78bfa, #e879f9);
+  background: var(--grad-title);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -256,7 +321,7 @@ button {
   padding: 16px 21px;
   border-radius: 12px;
   margin-top: 22px;
-  background: linear-gradient(105deg, #8b5cf6, #6d28d9);
+  background: var(--grad-purple);
   color: white;
   font-size: 11px;
   font-weight: 800;
@@ -270,7 +335,6 @@ button {
   box-shadow: 0 15px 38px #7c3aed55;
 }
 
-/* Рядок із логотипами компаній */
 .company-row {
   display: flex;
   align-items: center;
@@ -295,7 +359,7 @@ button {
   height: 24px;
   border-radius: 7px;
   background: #262238;
-  color: #c4b5fd;
+  color: var(--purple-light);
 }
 
 .chip-dots {
@@ -311,7 +375,7 @@ button {
   color: #9b94ad;
 }
 
-/* ---- Права частина Hero: стопка карток ---- */
+/* ---- Стопка карток ---- */
 .hero-right {
   min-height: 440px;
   display: grid;
@@ -319,7 +383,6 @@ button {
   position: relative;
 }
 
-/* Світіння позаду карток */
 .hero-right:before {
   content: "";
   position: absolute;
@@ -348,7 +411,6 @@ button {
   overflow: hidden;
 }
 
-/* Задня картка */
 .card-back {
   top: 28px;
   right: 0;
@@ -357,7 +419,6 @@ button {
   border: 1px solid #ffffff20;
 }
 
-/* Передня картка */
 .card-front {
   left: 0;
   bottom: 18px;
@@ -366,7 +427,6 @@ button {
   border: 1px solid #ffffff38;
 }
 
-/* Декоративні кола на картках */
 .card-front:after,
 .card-back:after {
   content: "";
@@ -378,13 +438,6 @@ button {
   right: -80px;
   top: -100px;
   box-shadow: 0 0 0 20px #ffffff08, 0 0 0 40px #ffffff05;
-}
-
-.card-back-header,
-.card-front-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
 }
 
 .card-stripes {
@@ -504,22 +557,14 @@ button {
   line-height: 1.9;
 }
 
-/* Картка зростання */
 .growth-card {
   max-width: 780px;
   margin: auto;
   padding: 30px 34px;
   border: 1px solid var(--line);
   border-radius: 24px;
-  background: linear-gradient(145deg, #171427, #0e0d18);
+  background: var(--grad-card);
   box-shadow: 0 25px 70px #0002;
-}
-
-.growth-card-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  align-items: center;
 }
 
 .growth-label,
@@ -538,7 +583,7 @@ button {
 .growth-percent {
   font-size: 29px;
   font-weight: 800;
-  color: #c4b5fd;
+  color: var(--purple-light);
 }
 
 .growth-percent span {
@@ -553,9 +598,9 @@ button {
   display: grid;
   place-items: center;
   background: #8b5cf620;
-  border: 1px solid #a78bfa35;
+  border: 1px solid var(--purple-border);
   border-radius: 15px;
-  color: #c4b5fd;
+  color: var(--purple-light);
   font-size: 20px;
 }
 
@@ -586,7 +631,7 @@ button {
 
 .meta-card {
   padding: 10px;
-  background: linear-gradient(145deg, #1a172b, #100f1b);
+  background: var(--grad-meta);
   border: 1px solid var(--line);
   border-radius: 18px;
   min-width: 0;
@@ -597,9 +642,6 @@ button {
 }
 
 .meta-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   color: #a9a3c1;
   font-size: 10px;
 }
@@ -611,7 +653,7 @@ button {
   display: grid;
   place-items: center;
   background: #8b5cf61a;
-  color: #c4b5fd;
+  color: var(--purple-light);
   cursor: pointer;
 }
 
@@ -686,9 +728,9 @@ button {
   display: grid;
   place-items: center;
   border-radius: 18px;
-  background: linear-gradient(145deg, #8b5cf630, #8b5cf608);
+  background: var(--grad-icon);
   border: 1px solid #a78bfa30;
-  color: #c4b5fd;
+  color: var(--purple-light);
   font-size: 19px;
 }
 
@@ -700,7 +742,7 @@ button {
   height: 20px;
   display: grid;
   place-items: center;
-  background: #a78bfa;
+  background: var(--purple-soft);
   color: #171027;
   border-radius: 50%;
   font-size: 10px;
@@ -736,61 +778,15 @@ button {
 }
 
 /* ============================================================
-   СІТКИ КАРТОК (рішення / ресурси / компанія)
+   СІТКИ
    ============================================================ */
 .solutions-grid,
 .resources-grid,
-.company-grid {
+.company-grid,
+.news-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-}
-
-.solution-card,
-.resource-card,
-.company-card {
-  padding: 28px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: linear-gradient(145deg, #171527, #0f0e19);
-  transition: transform .2s, border-color .2s;
-}
-
-/* Ефект при наведенні на картку */
-.solution-card:hover,
-.resource-card:hover,
-.company-card:hover {
-  transform: translateY(-4px);
-  border-color: #9b79f566;
-}
-
-.solution-card > i,
-.resource-card > i,
-.company-card > i {
-  width: 46px;
-  height: 46px;
-  display: grid;
-  place-items: center;
-  border-radius: 14px;
-  background: #8b5cf61b;
-  color: #c4b5fd;
-  font-size: 19px;
-}
-
-.solution-card h3,
-.resource-card h3,
-.company-card h3 {
-  font-size: 17px;
-  margin: 22px 0 8px;
-}
-
-.solution-card p,
-.resource-card p,
-.company-card p {
-  font-size: 13px;
-  line-height: 1.8;
-  color: var(--muted);
-  margin: 0;
 }
 
 /* ============================================================
@@ -809,17 +805,11 @@ button {
   margin: 5px 0 0;
 }
 
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
 .news-card {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 19px;
-  background: #11101d;
+  background: var(--surface);
 }
 
 .news-image {
@@ -859,7 +849,7 @@ button {
 }
 
 /* ============================================================
-   ПІДВАЛ САЙТУ (FOOTER)
+   ПІДВАЛ САЙТУ
    ============================================================ */
 .site-footer {
   border-top: 1px solid var(--line);
@@ -904,7 +894,6 @@ button {
   margin: 10px 0;
 }
 
-/* Поле підписки на розсилку */
 .newsletter-input-group {
   display: flex;
   gap: 6px;
@@ -924,7 +913,7 @@ button {
 }
 
 .newsletter-input-group input:focus {
-  border-color: #a78bfa;
+  border-color: var(--purple-soft);
 }
 
 .newsletter-input-group button {
@@ -932,7 +921,7 @@ button {
   flex-shrink: 0;
   border: 0;
   border-radius: 9px;
-  background: #8b5cf6;
+  background: var(--purple);
   color: white;
 }
 
@@ -1003,9 +992,9 @@ button {
   max-height: 90vh;
   overflow: auto;
   padding: 35px;
-  border: 1px solid #a78bfa35;
+  border: 1px solid var(--purple-border);
   border-radius: 24px;
-  background: linear-gradient(145deg, #191629, #0e0d18);
+  background: var(--grad-modal);
   box-shadow: 0 35px 100px #0009;
 }
 
@@ -1062,7 +1051,7 @@ button {
 
 .consultation-form input:focus,
 .consultation-form textarea:focus {
-  border-color: #a78bfa;
+  border-color: var(--purple-soft);
 }
 
 .modal-submit {
@@ -1089,7 +1078,7 @@ button {
   bottom: 0;
   width: min(280px, 85vw);
   z-index: 61;
-  background: #11101d;
+  background: var(--surface);
   border-left: 1px solid var(--line);
   padding: 80px 28px 30px;
   display: flex;
@@ -1153,7 +1142,6 @@ button {
     grid-template-columns: 1fr;
   }
 
-  /* Приховуємо другу мета-картку на планшетах */
   .meta-card:nth-child(2) {
     display: none;
   }
@@ -1184,7 +1172,6 @@ button {
     padding: 0 20px;
   }
 
-  /* Ховаємо десктопну навігацію, показуємо кнопку меню */
   .desktop-nav {
     display: none;
   }
@@ -1251,15 +1238,11 @@ button {
     height: 190px;
   }
 
-  .value-two-columns {
-    grid-template-columns: 1fr;
-  }
-
+  .value-two-columns,
   .value-left-col {
     grid-template-columns: 1fr;
   }
 
-  /* Повертаємо другу мета-картку на мобільних */
   .meta-card:nth-child(2) {
     display: block;
   }
@@ -1341,7 +1324,6 @@ button {
     font-size: 26px;
   }
 
-  /* Сповіщення на всю ширину екрана */
   .toast-notification {
     left: 16px;
     right: 16px;
